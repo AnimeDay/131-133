@@ -1,0 +1,81 @@
+
+<html>
+    <head>
+    
+        <title>Object Detection</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    
+      <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="style.css">
+    
+    </head>
+    
+    <body background="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSEhIVFRUVFRcVFRcVFxcVFxUVFRUXFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQFysdHR0tLS0rLSsrLS0tLS0tKy0tLS0tLS0rLS0tLSsrLS0tLS0rLSstKystLS0rLSsrKy0tLf/AABEIALcBFAMBIgACEQEDEQH/xAAbAAADAQEBAQEAAAAAAAAAAAABAgMABAUGB//EADIQAAICAAQEBAUEAgMBAAAAAAABAhEDEiFBBDFR8AVhcYEGkaHB0RMUsfEi4TJCUiP/xAAZAQADAQEBAAAAAAAAAAAAAAABAgMABAX/xAAiEQEBAQEAAgIBBQEAAAAAAAAAARECAxIhMQQTIkFRcVL/2gAMAwEAAhEDEQA/APyMJkE9Bxig0BIet/722DIABGXfuGh8LoUFJfT5vRe27G6X6L08vmzL0DgaUNDUZIOBoGGyhoOBpaMxkgpGxtToOUdo1GxtJQco7QWtenobG1OjZR6GoOBqaRnEplDRsDU69wZSriZo2NqWUOXvQo4hy7GxtQcTOBfIZo3q3slFFKA0GKDIFoNCqBVQKKIfXS+2JRQ1jTaRzTmG31CTXdgzVGOXBehinPk+CXj5eakMkBDJHDHdRoZIyQ8Y/nv8DyFoIZGQaHwou9236+t/dmCgpBwNagtevf8ARmg5Q4GlSDlDQaNgaCXPujNBoNGxtZwqtU9L0vTVqn8vqgIagpBwNKlz9NDJDMajYGkoKGoOUONpGFx35D0Gu/r+Q4GpqPfXyQUMkM1p89ft0/v5bA0jiGMR4xHyjTkt6SlAVxOtYaM8Ia8F/UcmUaOEdWQXKL6h+o5h4orKCFcA5je2kxYo4p4Z3NE5oXvnT8dYjhLQwykEWYa68yhl/s2Xfr67bevL5oMUc0dVGI8UBIdIpC1khkZDJ9Bijkp01r+QpARaWK3FRpUm6pJPWruVW+W701qrY0LUkM4hNenf8hAAoKHS5enz56/wtjAmFIdJ+XL7ARsbSpDL3CGggDMNWoaDgaVLpe3zGVd/YKCkg4Ggl6989zJeoygFBwNLlNFFMvfewySrvbp5a/QMhbSqI8YWAeGJRSYn1b/C8cADgNHitCc+KG3lzyd2tLDGjhIhPiRP3Ivtyf07sWxI9DnnIV4ojYl7n8Lc8Wfaqg2SkqKwmJLUFwZupZDDOJhD68hIeIqGRyx206YyFQ6KQlNHz9voMkZLY3L1GhaMRkwUOhii3fTRV0vXm/PUxu++g0+e/v31CABQU+/cKX9/MwO/xHw+WFDCnKKisSFx/wAlJtJ051dxvo/PyPPaLuSyrleZ9Xa00r/jW/uSa7/JiwEgmvqYLCl/ATRCkFm+o1AQyCWil37VQcphkxsLaCQ9G7+RkhiWlcBJI6KIYiNYEpGLJjZQNE6eISkBFHEFCYfWQTAkwsWUwSmTbEnIS085WUwnLmMD2N6OZDpCIeKIxeqffvTvYdVfKlb0XTpbJpDpFISmSGFQ97DwtPdpK9Fb5cm9r9kBMyj9fuZMIGsKAFBKKGSDhYbfJa8qvy6BeG1zTXsELQSDE0Yv8jZnyvTR1/Dp+W4QI0ZsbFSt1yvS1TrZtW69LFQGMiiJJjX5hCnVBROx4jQp4jJCodIeQtFDICHihsTtKK1ZdxElJGpJU3ASUR3MRsW4aaSUScirZKbEqnJSGLIfEZzYkiXVW55LKQjkLKRNyIXp0TlTMYnZhfYcZFcKN7+nLV2ubb00vXyJIdBg08R0xIsMSkLVO/8AY1iBzDFPm1G7+v8ARNMogwtFHTgYFnPCNnpcNDYpzEfL1k+Hb4dwsI6u822tI+g4Dg4uSnlTrRXqtVro9GeBWVqz3PDuOVc+Qvllz4L4O/3fufY+DeHYOSlhwWttKKSu+Z6XF/DvDY8HGWHHVVdLMumV7UfN8B40k0k7vf0KS+MMs/06W+t8vNnld+Ly3rZr3uPyPDzxlx8V8V/CWLw2Pkw4YmJhyScJZb8nFtaWtNdOZ4vifhmLw81DFhlbWZbpp7pn7FgeO5kqaaq7/wBHh/GPEcLxOGliNqavI0tY3/K0Wh0ePz+TZz1P9cvl/H8Preues/r+n5cNE9fC8JjSbb/J28P8Nxnyk19Tttk+3n8y9fEfO0PFH0k/g7FU1FNNPk638yOH8J8W5OKwnort6L5h58nH/UbrxeT69a8NIpBFcXAcG4yTUoumns1zQsUWjntFIItmch9TaUzlxJHSlZHGgT60/GSpxKolFBbFlPZpmTxIjWLiSDWn24pzITZXFZzyZydV18xOTFDJiWRq8MYwAMeKHEQyKQKeI1ipDKxoSmXqFMRMZDQDIdCIdIaFq/DTpnq4dN2nR5OHE68KdFua5fNzvzHq8XhPRunpz2+Ry5+hv3LapsadJeobUZFOH4iXNPUrNyu+ba+Rx4WJQZ8Q3uIf+Hu8FxLUdlWmhycTi5nmPNhxLT8jsnO4Aky6a92zGw8bqz0cHxBQ5vU+egm2epwWAmnm9hrJfsnN6l+H1vgviDclmenr58tT6v8AfQiszktUfl055NE/WvI9HD4z9SLubaXJJc3XN7nL5fxp1dd3g/MvMy/ZviDCXFTliRyRaWlf9652+vmfJzTi2nse5wOb9b/y0vS1ys3jPAOf/wBE/wDK9Vu/M6uP25y4++vfe68Fk5lnhtCzwy1lTljnU2hnNME1ROyduK5KIbFYrZtHNGbIYjGkzmxJE+uleOU5sjNjykSkc/VdHMJJi2NIRkqrBswDAHF9tufLW+XyGTJjIpCU40X31EChiqKXL87d2Nf9iwlpWmu++3Lpy2Cx4WnTKRJRLQGifSkSsZE0FMdKuiExsbE0o51IE5GtJ6/KixQ5yCQRdH1dSkd8cW4nkwZXBxWg6GO3Ci7tHpYEjyIYp18NL/LnoHQkerHh825fD4eMIpL3OfBxK5D4vFqro02tckQXESjO2uUmk2ua+56T46M6k0ll269bPC4zi21W2xzR4p1X1KekvzUPbrLI9Ti4YbuUa12OD9tKSbjFtLpqQhxGup6GB4k4qoui8+vhHOua8LiGc9nVxaTbaORnP39u7j6M5CZhZTEixLVJyOJI5pSK40jnbJdVXiFkTZSQjRGrRNgoZmFPpKCFoxh0yGQlmDpcUT39xk+t+xMKDKGLQHonAtFluU+miisWJFBGTqtmzE7NZtLh848WRTKRBoWL4TBiNWKpVqTctTaXFLBYsmK2bRkWU2dPC4jvmcCZaMxpS9R7mFjNPmNxHFLTzPHWPoSlisbcT9LXbi43uSc9DleIH9Qb3H9PHRmDmIwkFSDOgvITZCbLSZGSFqnKcgRiO0BCKaWcDnkXlMlJCdH5RYjGkI2Rq0KwWFisQ5rAKE2sLXl5e/d/IFiyAgabFEykSSKRHhatGRSKJxRRFpUelEzWTs1h0mGzGzCWFMXRxRMZTIWZs2h6rPEFziWLZtacrqQYyIpjKRtCxew5iCkFzG0PVbMBElIOYOh6qMKYuYeCCFPBhRsokrGJ9mcgCWawaOHIzkNORGUjWn5hJMRyNNknIjatI0mI2ZsFkrVZGsDMaQBI2EFmAZmNGJXGwwRiN6/Jfb4ZRCgmGKZSNnMkBxD8l+DxkPZBFYhlCxmzJhaFaNQFsXMCTEsGmkUzGsRM1g1sPmNmJ2azaOKZw5iaZrDoYqpFkcyY8cQaUt5XCsSiP6gXLQbSerrjOwSkc+HiFcw2kvOU1hTEMpBDC4jIyZTFZCTE6qvMLJk2xpMRkrVpAbFYxhDFNYGAws0ExjC7JE2ExWoQo0TGAYyM0YwxWaGjExjBazZmjGNQTnEQxhKpAbMYwpgCgGMxkzGMEBCjGCAoazGGKFjKQDGbFYzGbMYeJ2EkyUgGBT8psBjEqqVgsxgCDMYwDNYTGMz/2Q==">
+    <center>
+      <h1 class="btn btn-info heading">Object Detection</h1>
+      <a href="index.html" class="btn">Back</a>
+      <br><br><br><br>
+      <h3 id="status" class="btn btn-danger"></h3>
+      <br> 
+    </center>
+    
+    <script>
+      objectDetector= "";
+    
+    img = "";
+    objects = [];
+    status = "";
+    
+    function preload(){
+      img = loadImage('https://assets.eflorist.com/site/EF-22461/assets/products/PHR_/sku4673415.jpg');
+    }
+    
+    
+    function setup() {
+      canvas = createCanvas(640, 420);
+      canvas.center();
+      objectDetector = ml5.objectDetector('cocossd', modelLoaded);
+      document.getElementById("status").innerHTML = "Status : Detecting Objects";
+    }
+    
+    function modelLoaded() {
+      console.log("Model Loaded!")
+      status = true;
+      objectDetector.detect(img, gotResult);
+    }
+    
+    function gotResult(error, results) {
+      if (error) {
+        console.log(error);
+      }
+      console.log(results);
+      objects = results;
+    }
+    
+    
+    function draw() {
+      if (status != undefined) {
+            image(img, 0, 0, 640, 420);
+        for (var i = 0; i < objects.length; i++) {
+          document.getElementById("status").innerHTML = "Status : Objects Detected";
+          noStroke();
+          fill(0, 255, 0);
+          percent = floor(objects[i].confidence * 100);
+          text(objects[i].label + " " + percent + "%", objects[i].x + 5, objects[i].y + 15);
+          noFill();
+          stroke(0, 255, 0);
+          rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
+        }
+      }
+    }
+    
+    </script>
+    
+    </body>
+    
+    </html>
